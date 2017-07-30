@@ -146,10 +146,19 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
 {
     [_scrollView removeObserver:self forKeyPath:@"contentSize" context:kTLYShyNavBarManagerKVOContext];
 
-    if (_scrollView.delegate == self.delegateProxy)
-    {
-        _scrollView.delegate = self.delegateProxy.originalDelegate;
+    if ([_scrollView isKindOfClass:[ASTableView class]]) {
+        ASTableView *tableView = (ASTableView *)scrollView;
+        if (tableView.delegate == self.delegateProxy)
+        {
+            tableView.delegate = self.delegateProxy.originalDelegate;
+        }
+    } else {
+        if (_scrollView.delegate == self.delegateProxy)
+        {
+            _scrollView.delegate = self.delegateProxy.originalDelegate;
+        }
     }
+    
 
     _scrollView = scrollView;
     self.scrollViewController.scrollView = scrollView;
@@ -161,48 +170,26 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
     if (index != NSNotFound) {
         self.scrollViewController.refreshControl = [scrollView.subviews objectAtIndex:index];
     }
-
-    if (_scrollView.delegate != self.delegateProxy)
-    {
-        self.delegateProxy.originalDelegate = _scrollView.delegate;
-        _scrollView.delegate = (id)self.delegateProxy;
+    
+    if ([_scrollView isKindOfClass:[ASTableView class]]) {
+        ASTableView *tableView = (ASTableView *)scrollView;
+        if (tableView.delegate != self.delegateProxy)
+        {
+            self.delegateProxy.originalDelegate = _scrollView.delegate;
+            tableView.delegate = (id)self.delegateProxy;
+        }
+    } else {
+        if (_scrollView.delegate != self.delegateProxy)
+        {
+            self.delegateProxy.originalDelegate = _scrollView.delegate;
+            _scrollView.delegate = (id)self.delegateProxy;
+        }
     }
 
     [self cleanup];
     [self layoutViews];
 
     [_scrollView addObserver:self forKeyPath:@"contentSize" options:0 context:kTLYShyNavBarManagerKVOContext];
-}
-
-- (void)setTableNode:(ASTableNode *)tableNode {
-    [_scrollView removeObserver:self forKeyPath:@"contentSize" context:kTLYShyNavBarManagerKVOContext];
-    
-    if (tableNode.delegate == self.delegateProxy)
-    {
-        tableNode.delegate = self.delegateProxy.originalDelegate;
-    }
-    
-    _tableNode = tableNode;
-    self.scrollViewController.tableNode = tableNode;
-    
-    NSUInteger index = [tableNode.subnodes indexOfObjectPassingTest:^BOOL (id obj, NSUInteger idx, BOOL *stop) {
-        return [obj isKindOfClass:[UIRefreshControl class]];
-    }];
-    
-    if (index != NSNotFound) {
-        self.scrollViewController.refreshControl = [tableNode.view.subviews objectAtIndex:index];
-    }
-    
-    if (_tableNode.delegate != self.delegateProxy)
-    {
-        self.delegateProxy.originalDelegate = _scrollView.delegate;
-        _tableNode.delegate = (id)self.delegateProxy;
-    }
-    
-    [self cleanup];
-    [self layoutViews];
-    
-    [_tableNode addObserver:self forKeyPath:@"contentSize" options:0 context:kTLYShyNavBarManagerKVOContext];
 }
 
 - (CGRect)extensionViewBounds

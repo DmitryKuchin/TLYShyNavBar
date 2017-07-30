@@ -37,7 +37,6 @@
  */
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-@property (nonatomic, strong) ASTableNode *tableNode;
 
 /* The extension view to be shown beneath the navbar
  */

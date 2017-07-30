@@ -11,6 +11,7 @@
 #import "TLYShyParent.h"
 #import "TLYShyChild.h"
 #import "../TLYShyNavBarFade.h"
+#import <Texture/AsyncDisplayKit/AsyncDisplayKit.h>
 
 
 extern const CGFloat contractionVelocity;
