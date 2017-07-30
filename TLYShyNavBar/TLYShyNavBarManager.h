@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TLYShyNavBarFade.h"
+#import <Texture/AsyncDisplayKit/AsyncDisplayKit.h>
 
 
 @protocol TLYShyNavBarManagerDelegate;
@@ -35,6 +36,8 @@
  * IMPORTANT: set this property AFTER assigning its delegate, if needed!
  */
 @property (nonatomic, strong) UIScrollView *scrollView;
+
+@property (nonatomic, strong) ASTableNode *tableNode;
 
 /* The extension view to be shown beneath the navbar
  */

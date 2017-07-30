@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A86AC6F73696ED166A6FBA1 /* libPods-TLYShyNavBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD263294D8A6D0330919EADC /* libPods-TLYShyNavBar.a */; };
 		A21B00001BFDD41100F9FB54 /* TLYShyScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21BFFF81BFDD41100F9FB54 /* TLYShyScrollViewController.m */; };
 		A21B00011BFDD41100F9FB54 /* TLYShyStatusBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = A21BFFF91BFDD41100F9FB54 /* TLYShyStatusBarController.h */; };
 		A21B00021BFDD41100F9FB54 /* TLYShyStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A21BFFFA1BFDD41100F9FB54 /* TLYShyStatusBarController.m */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280B633D7F9D44148EEB5BB3 /* Pods-TLYShyNavBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLYShyNavBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TLYShyNavBar/Pods-TLYShyNavBar.debug.xcconfig"; sourceTree = "<group>"; };
 		A21B00051BFDD41900F9FB54 /* TLYShyNavBarFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyNavBarFade.h; sourceTree = "<group>"; };
 		A21B00061BFDD41900F9FB54 /* TLYShyNavBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyNavBarManager.h; sourceTree = "<group>"; };
 		A21B00071BFDD41900F9FB54 /* TLYShyNavBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyNavBarManager.m; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		A21BFFFA1BFDD41100F9FB54 /* TLYShyStatusBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLYShyStatusBarController.m; path = ShyControllers/TLYShyStatusBarController.m; sourceTree = "<group>"; };
 		A21BFFFB1BFDD41100F9FB54 /* TLYShyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLYShyViewController.h; path = ShyControllers/TLYShyViewController.h; sourceTree = "<group>"; };
 		A21BFFFC1BFDD41100F9FB54 /* TLYShyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLYShyViewController.m; path = ShyControllers/TLYShyViewController.m; sourceTree = "<group>"; };
+		CD263294D8A6D0330919EADC /* libPods-TLYShyNavBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TLYShyNavBar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D43C56AD354286EAE622723D /* Pods-TLYShyNavBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLYShyNavBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-TLYShyNavBar/Pods-TLYShyNavBar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A86AC6F73696ED166A6FBA1 /* libPods-TLYShyNavBar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +75,8 @@
 			children = (
 				A21BFFAC1BFDCCE000F9FB54 /* Products */,
 				A21BFFA51BFDCC8800F9FB54 /* TLYShyNavBar */,
+				BB774512B5D08C935E7C0565 /* Pods */,
+				A813C8DC522BDE0ECEFB2FC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +140,23 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		A813C8DC522BDE0ECEFB2FC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD263294D8A6D0330919EADC /* libPods-TLYShyNavBar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB774512B5D08C935E7C0565 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				280B633D7F9D44148EEB5BB3 /* Pods-TLYShyNavBar.debug.xcconfig */,
+				D43C56AD354286EAE622723D /* Pods-TLYShyNavBar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -162,10 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A21BFFA91BFDCC8800F9FB54 /* Build configuration list for PBXNativeTarget "TLYShyNavBar" */;
 			buildPhases = (
+				84228C3FC834314ADC19395F /* [CP] Check Pods Manifest.lock */,
 				A21BFF9F1BFDCC8800F9FB54 /* Sources */,
 				A21BFFA01BFDCC8800F9FB54 /* Frameworks */,
 				A21BFFA11BFDCC8800F9FB54 /* Headers */,
 				A21BFFA21BFDCC8800F9FB54 /* Resources */,
+				99EE9930F39C8DBE5FE39607 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,6 +241,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84228C3FC834314ADC19395F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99EE9930F39C8DBE5FE39607 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TLYShyNavBar/Pods-TLYShyNavBar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A21BFF9F1BFDCC8800F9FB54 /* Sources */ = {
@@ -325,6 +384,7 @@
 		};
 		A21BFFAA1BFDCC8800F9FB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280B633D7F9D44148EEB5BB3 /* Pods-TLYShyNavBar.debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEFINES_MODULE = YES;
@@ -343,6 +403,7 @@
 		};
 		A21BFFAB1BFDCC8800F9FB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D43C56AD354286EAE622723D /* Pods-TLYShyNavBar.release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEFINES_MODULE = YES;

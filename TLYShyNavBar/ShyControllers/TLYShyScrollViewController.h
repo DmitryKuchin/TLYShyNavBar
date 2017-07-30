@@ -15,6 +15,7 @@
 @interface TLYShyScrollViewController : NSObject <TLYShyChild>
 
 @property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, weak) ASTableNode *tableNode;
 @property (nonatomic, weak) UIRefreshControl *refreshControl;
 @property (nonatomic, weak) TLYShyViewController *parent;
 
