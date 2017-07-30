@@ -148,9 +148,9 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
 
     if ([_scrollView isKindOfClass:[ASTableView class]]) {
         ASTableView *tableView = (ASTableView *)scrollView;
-        if (tableView.delegate == self.delegateProxy)
+        if (tableView.asyncDelegate == self.delegateProxy)
         {
-            tableView.delegate = self.delegateProxy.originalDelegate;
+            tableView.asyncDelegate = self.delegateProxy.originalDelegate;
         }
     } else {
         if (_scrollView.delegate == self.delegateProxy)
@@ -173,10 +173,10 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
     
     if ([_scrollView isKindOfClass:[ASTableView class]]) {
         ASTableView *tableView = (ASTableView *)scrollView;
-        if (tableView.delegate != self.delegateProxy)
+        if (tableView.asyncDelegate != self.delegateProxy)
         {
             self.delegateProxy.originalDelegate = _scrollView.delegate;
-            tableView.delegate = (id)self.delegateProxy;
+            tableView.asyncDelegate = (id)self.delegateProxy;
         }
     } else {
         if (_scrollView.delegate != self.delegateProxy)
